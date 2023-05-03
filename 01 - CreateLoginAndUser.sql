@@ -1,0 +1,13 @@
+USE [master]
+GO
+CREATE LOGIN [Disney] WITH PASSWORD=N'Disney', DEFAULT_DATABASE=[Disney], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+
+USE [Disney]
+GO
+CREATE USER [Disney] FOR LOGIN [Disney]
+GO
+USE [Disney]
+GO
+ALTER ROLE [db_owner] ADD MEMBER [Disney]
+GO
