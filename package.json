@@ -2,10 +2,10 @@
   "name": "app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "personajeController.js",
   "type": "module",
   "scripts": {
-    "start:disney": "node ./src/index.js"
+    "start:disney": "node ./src/controllers/personajeController.js"
   },
   "author": "",
   "license": "ISC",
