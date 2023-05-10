@@ -4,6 +4,5 @@ export default class PeliculaOSerie {
     titulo;
     fecha_de_creacion;
     calificacion;
-    personajes_asociados; 
     
 }
