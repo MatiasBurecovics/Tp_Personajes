@@ -10,7 +10,7 @@ export class PersonajeService {
         console.log('This is a function on the service');
 
         const pool = await sql.connect(config);
-        const response = await pool.request().query(`SELECT * from ${personajeTabla}`);
+        const response = await pool.request().query(`SELECT Imagen, Nombre, Id from ${personajeTabla}`);
         console.log(response)
 
         return response.recordset;
@@ -28,16 +28,17 @@ export class PersonajeService {
         return response.recordset[0];
     }
 
-    createPizza = async (pizza) => {
+    createPersonaje= async (personaje) => {
         console.log('This is a function on the service');
 
         const pool = await sql.connect(config);
         const response = await pool.request()
-            .input('Nombre',sql.NChar, pizza?.nombre ?? '')
-            .input('LibreGluten',sql.Bit, pizza?.libreGluten ?? false)
-            .input('Importe',sql.NChar, pizza?.importe ?? 0)
-            .input('Descripcion',sql.NChar, pizza?.description ?? '')
-            .query(`INSERT INTO ${pizzaTabla}(Nombre, LibreGluten, Importe, Descripcion) VALUES (@Nombre, @LibreGluten, @Importe, @Descripcion)`);
+            .input('Imagen',sql.NChar, personaje?.imagen ?? '')
+            .input('Nombre',sql.NChar, personaje?.nombre ?? '')
+            .input('Edad',sql.Int, personaje?.edad ?? 0)
+            .input('Peso',sql.Float, personaje?.peso ?? 0)
+            .input('Historia',sql.NChar, personaje?.historia ?? '')
+            .query(`INSERT INTO ${personajeTabla}(Imagen, Nombre, Edad,Peso, Historia) VALUES (@Imagen, @Nombre, @Edad,@Peso, @Historia)`);
         console.log(response)
 
         return response.recordset;

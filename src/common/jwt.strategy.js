@@ -1,4 +1,6 @@
 import passport from "passport";
+import { ExtractJwt } from "passport-jwt";
+import { Strategy } from "passport-jwt";
 
 const opt={
     secretOrKey: process.env.AUTH_HS256_KEY,
@@ -7,7 +9,8 @@ const opt={
     algorithms: ["HS256"],
 };
 
-const jwtStrategy = new Strategy(opt,(jwt_payload, done) =>{
+
+export const jwtStrategy = new Strategy(opt,(jwt_payload, done) =>{
     if(!jwt_payload){
         done(true);
     }else{
