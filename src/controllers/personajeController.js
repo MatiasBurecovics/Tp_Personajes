@@ -5,7 +5,7 @@ import { Authenticate } from '../common/jwt.strategy.js';
 const router = Router();
 const personajeService = new PersonajeService();
 
-router.get('/auth/login', Authenticate , async (req, res) => {
+router.get('', Authenticate , async (req, res) => {
   console.log(`This is a get operation`);
   
   const personajes= await personajeService.getPersonajes();
@@ -13,16 +13,16 @@ router.get('/auth/login', Authenticate , async (req, res) => {
   return res.status(200).json(personajes);
 });
 
-router.get('/:id', Authenticate, async (req, res) => {
+router.get('', Authenticate, async (req, res) => {
   console.log(`Request URL Param: ${req.params.id}`);
   console.log(`This is a get operation`);
 
-  const pizza = await pizzaService.getPizzaById(req.params.id);
+  const personajeId = await personajeService.getPersonajesById(req.params.id);
 
-  return res.status(200).json(pizza);
+  return res.status(200).json(personajeId);
 });
 
-router.post('/auth/login', Authenticate, async (req, res) => {
+router.post('', Authenticate, async (req, res) => {
   console.log(`This is a post operation`);
 
   const crearPersonaje = await personajeService.createPersonaje(req.body);

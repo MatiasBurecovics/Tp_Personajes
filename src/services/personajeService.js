@@ -16,16 +16,16 @@ export class PersonajeService {
         return response.recordset;
     }
 
-    getPizzaById = async (id) => {
+    getPersonajesById = async (id) => {
         console.log('This is a function on the service');
 
         const pool = await sql.connect(config);
         const response = await pool.request()
-            .input('id',sql.Int, id)
-            .query(`SELECT * from ${pizzaTabla} where id = @id`);
+       .input("pId", sql.Int,id)
+        .query(`SELECT * FROM ${personajeTabla} WHERE Id=@pId`);
         console.log(response)
 
-        return response.recordset[0];
+        return response.recordset;
     }
 
     createPersonaje= async (personaje) => {
