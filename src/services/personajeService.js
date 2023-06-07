@@ -45,10 +45,9 @@ export class PersonajeService {
         return response.recordset;
     }
 
-    updatePersonajeById = async (id, personaje) => {
-        console.log('This is a function on the service');
+    updatePersonajeById = async (personaje,id) => {
 
-        const pool = await sql.connect(config);
+      const pool = await sql.connect(config);
         const response = await pool.request()
             .input('Id',sql.Int, id)
             .input('Imagen',sql.NChar, personaje?.imagen ?? '')
@@ -56,7 +55,7 @@ export class PersonajeService {
             .input('Edad',sql.Int, personaje?.edad ?? 0)
             .input('Peso',sql.Float, personaje?.peso ?? 0)
             .input('Historia',sql.NChar, personaje?.historia ?? '')
-            .query(`UPDATE ${personajeTabla} SET Imagen = @Imagen , Nombre = @Nombre, Edad = @Edad, Peso = @Peso, Historia = @Historia WHERE id = @Id`);
+            .query(`UPDATE ${personajeTabla} SET Imagen = @Imagen , Nombre = @Nombre, Edad = @Edad, Peso = @Peso, Historia = @Historia WHERE Id = @Id`);
         console.log(response)
 
         return response.recordset;
