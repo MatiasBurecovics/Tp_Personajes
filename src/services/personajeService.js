@@ -4,7 +4,7 @@ import 'dotenv/config'
 
 const personajeTabla = process.env.DB_TABLA_PERSONAJE;
 const PerYPelTabla = process.env.DB_TABLA_PERSONAJE_PELICULA;
-
+const peliculaTabla = process.env.DB_TABLA_PELICULAOSERIE;
 export class PersonajeService {
 
     getPersonajes = async () => {
@@ -23,10 +23,20 @@ export class PersonajeService {
         const pool = await sql.connect(config);
         const response = await pool.request()
        .input("pId", sql.Int,id)
-        .query(`SELECT * FROM ${personajeTabla} WHERE Id=@pId`);
-        console.log(response)
+       .query(`
+            SELECT ps.Titulo
+            FROM ${personajeTabla} AS personaje
+            INNER JOIN ${PerYPelTabla} AS pp ON personaje.Id = pp.Id_Personaje
+            INNER JOIN ${peliculaTabla} AS ps ON pp.Id_PeliculaOSerie = ps.Id
+            WHERE personaje.Id = @pId
+        `);
 
-        return response.recordset;
+    const peliculasSeries = responsePeliculasSeries.recordset.map((row) => row.Titulo);
+
+    return {
+        ...personaje,
+        PeliculasSeries: peliculasSeries
+    };
     }
 
     createPersonaje= async (personaje) => {
@@ -55,7 +65,7 @@ export class PersonajeService {
             .input('Edad',sql.Int, personaje?.edad ?? 0)
             .input('Peso',sql.Float, personaje?.peso ?? 0)
             .input('Historia',sql.NChar, personaje?.historia ?? '')
-            .query(`UPDATE ${personajeTabla} SET Imagen = @Imagen , Nombre = @Nombre, Edad = @Edad, Peso = @Peso, Historia = @Historia WHERE Id = @Id`);
+            .query(`UPDATE ${personajeTabla} SET Imagen = @Imagen , Nombre = @Nombre, Edad = @Edad, Peso = @Peso, Historia = @Historia WHERE personaje.Id = @Id`);
         console.log(response)
 
         return response.recordset;
@@ -67,7 +77,7 @@ export class PersonajeService {
         const pool = await sql.connect(config);
         const response = await pool.request()
             .input('Id',sql.Int, id)
-            .query(`DELETE FROM ${personajeTabla}, ${PerYPelTabla} WHERE Id_personaje = @id`);
+            .query(`DELETE FROM ${personajeTabla} WHERE Id = @Id`);
         console.log(response)
 
         return response.recordset;

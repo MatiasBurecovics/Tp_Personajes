@@ -1,52 +1,52 @@
 import { Router } from 'express';
-import { PersonajeService } from '../services/personajeService.js';
+import { PeliculaOSerieService } from '../services/peliculaService.js';
 import { Authenticate } from '../common/jwt.strategy.js';
 
 const router = Router();
-const personajeService = new PersonajeService();
+const peliculaService = new PeliculaOSerieService();
 
 
 router.get('', Authenticate , async (req, res) => {
   console.log(`This is a get operation`);
   
-  const personajes= await personajeService.getPersonajes();
+  const peliculas= await peliculaService.getPeliculaOSerie();
 
-  return res.status(200).json(personajes);
+  return res.status(200).json(peliculas);
 });
 
 router.get('/:id', Authenticate, async (req, res) => {
   console.log(`Request URL Param: ${req.params.id}`);
   console.log(`This is a get operation`);
 
-  const personajeId = await personajeService.getPersonajesById(req.params.id);
+  const peliculaId = await peliculaService.getpeliculaOSerieById(req.params.id);
 
-  return res.status(200).json(personajeId);
+  return res.status(200).json(peliculaId);
 });
 
 router.post('', Authenticate, async (req, res) => {
   console.log(`This is a post operation`);
 
-  const crearPersonaje = await personajeService.createPersonaje(req.body);
+  const crearpelicula = await peliculaService.createpeliculaOSerie(req.body);
 
-  return res.status(201).json(crearPersonaje);
+  return res.status(201).json(crearpelicula);
 });
 
 router.put('/:id', Authenticate,  async (req, res) => {
   console.log(`Request URL Param: ${req.params.id}`);
   console.log(`This is a put operation`);
 
-  const updatePersonaje = await personajeService.updatePersonajeById(req.body,req.params.id);
+  const updatepelicula = await peliculaService.updatepeliculaOSerieById(req.body,req.params.id);
 
-  return res.status(200).json(updatePersonaje);
+  return res.status(200).json(updatepelicula);
 });
 
 router.delete('/:id',Authenticate,  async (req, res) => {
   console.log(`Request URL Param: ${req.params.id}`);
   console.log(`This is a delete operation`);
 
-  const eliminarPersonaje = await personajeService.deletePersonajeById(req.params.id);
+  const eliminarpelicula = await peliculaService.deletepeliculaOSerieById(req.params.id);
 
-  return res.status(200).json(eliminarPersonaje);
+  return res.status(200).json(eliminarpelicula);
 });
 
 export default router;
