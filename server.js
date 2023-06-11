@@ -4,6 +4,7 @@ import PersonajeRouter from "./src/controllers/personajeController.js";
 import PeliculaRouter from "./src/controllers/peliculaController.js";
 import passport from "passport";
 import {jwtStrategy} from "./src/common/jwt.strategy.js";
+import authRouter from "./src/controllers/authController.js"
 
 const app = express();
 const port = 5000;
@@ -11,12 +12,14 @@ const port = 5000;
 
 app.use(cors());
 app.use(express.json());
+passport.use(jwtStrategy);
+app.use(passport.initialize());
 
 app.use("/characters", PersonajeRouter);
 app.use("/movies", PeliculaRouter);
+app.use("/auth", authRouter);
 
-passport.use(jwtStrategy);
-app.use(passport.initialize());
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);

@@ -13,7 +13,7 @@ const getRandomString = () => {
   return result;
 };
 
-const getSignedToken = () => {
+export const getSignedToken = () => {
   const userId = getRandomString();
   const userMail = `${userId}@example.com`;
   const token = jwt.sign(
@@ -33,4 +33,3 @@ const getSignedToken = () => {
   return token;
 };
 
-console.log(getSignedToken());
