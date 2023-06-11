@@ -8,8 +8,6 @@ const peliculaTabla = process.env.DB_TABLA_PELICULAOSERIE;
 export class PersonajeService {
 
     getPersonajes = async () => {
-        console.log('This is a function on the service');
-
         const pool = await sql.connect(config);
         const response = await pool.request().query(`SELECT Imagen, Nombre, Id from ${personajeTabla}`);
         console.log(response)
@@ -18,29 +16,15 @@ export class PersonajeService {
     }
 
     getPersonajesById = async (id) => {
-        console.log('This is a function on the service');
-
         const pool = await sql.connect(config);
-        const response = await pool.request()
-       .input("pId", sql.Int,id)
-       .query(`
-            SELECT ps.Titulo
-            FROM ${personajeTabla} AS personaje
-            INNER JOIN ${PerYPelTabla} AS pp ON personaje.Id = pp.Id_Personaje
-            INNER JOIN ${peliculaTabla} AS ps ON pp.Id_PeliculaOSerie = ps.Id
-            WHERE personaje.Id = @pId
-        `);
-
-    const peliculasSeries = responsePeliculasSeries.recordset.map((row) => row.Titulo);
-
-    return {
-        ...personaje,
-        PeliculasSeries: peliculasSeries
-    };
+        const response = await pool.request().input("pId", sql.Int,id).query(`SELECT * FROM ${personajeTabla} WHERE Id = @pId`)
+        const response2 = await pool.request().input("pId", sql.Int,id).query(`SELECT Titulo FROM ${peliculaTabla} INNER JOIN ${PerYPelTabla} ON ${peliculaTabla}.Id = ${PerYPelTabla}.Id_PeliculaOSerie WHERE ${PerYPelTabla}.Id_Personaje= @pId`)
+        const personaje = response.recordset[0]
+        personaje.peliculaoserie = response2.recordset
+        return personaje;
     }
 
     createPersonaje= async (personaje) => {
-        console.log('This is a function on the service');
 
         const pool = await sql.connect(config);
         const response = await pool.request()
@@ -72,12 +56,14 @@ export class PersonajeService {
     }
 
     deletePersonajeById = async (id) => {
-        console.log('This is a function on the service');
 
         const pool = await sql.connect(config);
         const response = await pool.request()
             .input('Id',sql.Int, id)
-            .query(`DELETE FROM ${personajeTabla} WHERE Id = @Id`);
+            .query(`
+            DELETE FROM ${PerYPelTabla} WHERE Id_Personaje = @Id;
+            DELETE FROM ${personajeTabla} WHERE Id = @Id;
+          `);
         console.log(response)
 
         return response.recordset;

@@ -9,7 +9,10 @@ const peliculaService = new PeliculaOSerieService();
 router.get('', Authenticate , async (req, res) => {
   console.log(`This is a get operation`);
   
-  const peliculas= await peliculaService.getPeliculaOSerie();
+  const { name, order } = req.query;
+  
+  const peliculas = await peliculaService.getPeliculaOSerie(name, order);
+
 
   return res.status(200).json(peliculas);
 });
