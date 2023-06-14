@@ -8,8 +8,8 @@ const personajeService = new PersonajeService();
 
 router.get('', Authenticate , async (req, res) => {
   console.log(`This is a get operation`);
-  
-  const personajes= await personajeService.getPersonajes();
+  const { name, age,weight,movies} = req.query;
+  const personajes= await personajeService.getPersonajes(name, age,weight,movies);
 
   return res.status(200).json(personajes);
 });
