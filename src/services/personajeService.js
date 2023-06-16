@@ -5,28 +5,62 @@ import 'dotenv/config'
 const personajeTabla = process.env.DB_TABLA_PERSONAJE;
 const PerYPelTabla = process.env.DB_TABLA_PERSONAJE_PELICULA;
 const peliculaTabla = process.env.DB_TABLA_PELICULAOSERIE;
+
 export class PersonajeService {
 
     getPersonajes = async (name = '', age = 0,weight=0,movies=0) => {
         const pool = await sql.connect(config);
         let query=`SELECT Imagen, Nombre, Id from ${personajeTabla}`
+        let where =false
         if (name) {
-            query += ` WHERE Nombre LIKE '%${name}%'`;
-          }
 
+          if(where)
+          {
+            
+            query += ` AND Nombre LIKE '%${name}%'`;
+          }
+           else
+           {
+            query += ` WHERE Nombre LIKE '%${name}%'`;
+          where=true
+           }
+          
+          }
             if (age) {
+
+            if(where)
+          {
+            query += ` AND Edad LIKE '%${age}%'`;
+          }
+           else
+           {
             query += ` WHERE Edad LIKE '%${age}%'`;
+            where=true
+           }
           }
 
           if (weight) {
-            query += ` WHERE Peso LIKE '%${weight}%'`;
+            if(where)
+            {
+              query += ` AND Peso LIKE '%${weight}%'`;
+            }
+             else
+             {
+              query += ` WHERE Peso LIKE '%${weight}%'`;
+              where=true
+             }
           }
           if (movies) {
-            query += ` WHERE ${PerYPelTabla}.Id_Personaje IN (SELECT Id_Personaje FROM ${PerYPelTabla} WHERE Id_PeliculaSerie = ${movies}) LIKE '%${movies}%' `;
+            if (where) {
+              query += ` AND Id IN (SELECT Id_Personaje FROM ${PerYPelTabla} WHERE Id_PeliculaOSerie = ${movies})`;
+            } 
+            else {
+              query += ` WHERE Id IN (SELECT Id_Personaje FROM ${PerYPelTabla} WHERE Id_PeliculaOSerie = ${movies})`;
+              where = true;
+            }
           }
         const response = await pool.request().query(query);
         console.log(response)
-
         return response.recordset;
     }
 

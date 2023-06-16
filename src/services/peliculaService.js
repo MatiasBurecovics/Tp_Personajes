@@ -37,17 +37,13 @@ export class PeliculaOSerieService {
     }
 
     createpeliculaOSerie= async (peliculaOSerie) => {
-        const calificacion = peliculaOSerie?.calificacion ?? 0;
 
-        if (calificacion < 1 || calificacion > 5) {
-          throw new Error('La calificación debe ser entre 1 y 5');
-        }
         const pool = await sql.connect(config);
         const response = await pool.request()
             .input('Imagen',sql.NChar, peliculaOSerie?.imagen ?? '')
             .input('Titulo',sql.NChar, peliculaOSerie?.titulo ?? '')
             .input('Fecha_de_creacion',sql.DateTime, peliculaOSerie.fecha_de_creacion)
-            .input('Calificacion',sql.Float, peliculaOSerie.calificacion)
+            .input('Calificacion',sql.Float, peliculaOSerie?.calificacion ?? 0)
             .query(`INSERT INTO ${peliculaTabla}(Imagen, Titulo, Fecha_de_creacion,Calificacion) VALUES (@Imagen, @Titulo, @Fecha_de_creacion,@Calificacion)`);
         console.log(response)
 
@@ -55,18 +51,13 @@ export class PeliculaOSerieService {
     }
 
     updatepeliculaOSerieById = async (peliculaOSerie,id) => {
-        const calificacion = peliculaOSerie?.calificacion ?? 0;
-
-        if (calificacion < 1 || calificacion > 5) {
-          throw new Error('La calificación debe ser entre 1 y 5');
-        }
         const pool = await sql.connect(config);
         const response = await pool.request()
            .input('Id',sql.Int, id)
             .input('Imagen',sql.NChar, peliculaOSerie?.imagen ?? '')
             .input('Titulo',sql.NChar, peliculaOSerie?.titulo ?? '')
             .input('Fecha_de_creacion',sql.DateTime, peliculaOSerie.fecha_de_creacion)
-            .input('Calificacion',sql.Float, peliculaOSerie.calificacion)
+            .input('Calificacion',sql.Float, peliculaOSerie?.calificacion ?? 0)
             .query(`UPDATE ${peliculaTabla} SET Imagen = @Imagen , Titulo = @Titulo, Fecha_de_creacion = @Fecha_de_creacion, Calificacion = @Calificacion WHERE Id = @Id`);
         console.log(response)
 
