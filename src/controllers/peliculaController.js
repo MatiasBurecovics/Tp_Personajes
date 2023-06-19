@@ -7,7 +7,7 @@ const peliculaService = new PeliculaOSerieService();
 
 
 router.get('', Authenticate , async (req, res) => {
-  console.log(`This is a get operation`);
+
   
   const { name, order } = req.query;
   
@@ -18,16 +18,27 @@ router.get('', Authenticate , async (req, res) => {
 });
 
 router.get('/:id', Authenticate, async (req, res) => {
-  console.log(`Request URL Param: ${req.params.id}`);
-  console.log(`This is a get operation`);
 
-  const peliculaId = await peliculaService.getpeliculaOSerieById(req.params.id);
+  const id=req.params.id;
+if(id<1)
+{
+    return res.status(400).send();
+}
+  const peliculaId = await peliculaService.getpeliculaOSerieById(id);
 
-  return res.status(200).json(peliculaId);
+  if (peliculaId == null) {
+    return res.status(404).send();
+  } 
+  else
+   {
+    return res.status(200).json(peliculaId);
+  }
 });
 
 router.post('', Authenticate, async (req, res) => {
-  console.log(`This is a post operation`);
+  if (req.body.calificacion < 1 || req.body.calificacion > 5 ) {
+    return res.status(400).json({error: "La calificacion no es correcta (tiene que ser entre 1 y 5)"})
+  }
 
   const crearpelicula = await peliculaService.createpeliculaOSerie(req.body);
 
@@ -35,21 +46,36 @@ router.post('', Authenticate, async (req, res) => {
 });
 
 router.put('/:id', Authenticate,  async (req, res) => {
-  console.log(`Request URL Param: ${req.params.id}`);
-  console.log(`This is a put operation`);
+  const id = req.params.id;
 
-  const updatepelicula = await peliculaService.updatepeliculaOSerieById(req.body,req.params.id);
-
-  return res.status(200).json(updatepelicula);
+  if(id<1)
+{
+    return res.status(400).send();
+}
+  if (req.body.calificacion < 1 || req.body.calificacion > 5) {
+    return res.status(400).json({ error: "La calificacion no es correcta (tiene que ser entre 1 y 5)" });
+  }
+  const updatepelicula = await peliculaService.updatepeliculaOSerieById(req.body, id);
+  if(updatepelicula.rowsAffected === 0)
+  {
+      return res.status(404).send();
+  }
+  else if(updatepelicula!=null){
+  return res.status(200).send(updatepelicula);
+  }
 });
 
 router.delete('/:id',Authenticate,  async (req, res) => {
-  console.log(`Request URL Param: ${req.params.id}`);
-  console.log(`This is a delete operation`);
+  const id=req.params.id;
+  if(id<1)
+      {
+          return res.status(400).send();
+      }
+  const eliminarpelicula = await peliculaService.deletepeliculaOSerieById(id);
 
-  const eliminarpelicula = await peliculaService.deletepeliculaOSerieById(req.params.id);
-
-  return res.status(200).json(eliminarpelicula);
+ //no nos salio el error 404 hubo muchas complicaciones por el tema de como hicimos para que borre lo de la tabla relacionada
+    return res.status(200).send(eliminarpelicula);
+  
 });
 
 export default router;

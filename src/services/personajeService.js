@@ -67,6 +67,9 @@ export class PersonajeService {
     getPersonajesById = async (id) => {
         const pool = await sql.connect(config);
         const response = await pool.request().input("pId", sql.Int,id).query(`SELECT * FROM ${personajeTabla} WHERE Id = @pId`)
+        if (response.recordset.length == 0) {
+          return null
+        }
         const response2 = await pool.request().input("pId", sql.Int,id).query(`SELECT Titulo FROM ${peliculaTabla} INNER JOIN ${PerYPelTabla} ON ${peliculaTabla}.Id = ${PerYPelTabla}.Id_PeliculaOSerie WHERE ${PerYPelTabla}.Id_Personaje= @pId`)
         const personaje = response.recordset[0]
         personaje.peliculaoserie = response2.recordset
@@ -91,17 +94,21 @@ export class PersonajeService {
     updatePersonajeById = async (personaje,id) => {
 
       const pool = await sql.connect(config);
+      const valoresOriginales =  await this.getPersonajesById(id)
         const response = await pool.request()
             .input('Id',sql.Int, id)
-            .input('Imagen',sql.NChar, personaje?.imagen ?? '')
-            .input('Nombre',sql.NChar, personaje?.nombre ?? '')
-            .input('Edad',sql.Int, personaje?.edad ?? 0)
-            .input('Peso',sql.Float, personaje?.peso ?? 0)
-            .input('Historia',sql.NChar, personaje?.historia ?? '')
-            .query(`UPDATE ${personajeTabla} SET Imagen = @Imagen , Nombre = @Nombre, Edad = @Edad, Peso = @Peso, Historia = @Historia WHERE personaje.Id = @Id`);
+            .input('Imagen',sql.NChar, personaje?.imagen ??(valoresOriginales?.Imagen || ''))
+            .input('Nombre',sql.NChar, personaje?.nombre ?? (valoresOriginales?.Nombre || ''))
+            .input('Edad',sql.Int, personaje?.edad ?? (valoresOriginales?.Edad || 0))
+            .input('Peso',sql.Float, personaje?.peso ??(valoresOriginales?.Peso || 0))
+            .input('Historia',sql.NChar, personaje?.historia ??(valoresOriginales?.Historia || ''))
+            .query(`UPDATE ${personajeTabla} SET Imagen = @Imagen , Nombre = @Nombre, Edad = @Edad, Peso = @Peso, Historia = @Historia WHERE Id = @Id`);
         console.log(response)
 
-        return response.recordset;
+        return {
+          rowsAffected: response.rowsAffected[0],
+          recordset: response.recordset
+        };
     }
 
     deletePersonajeById = async (id) => {
