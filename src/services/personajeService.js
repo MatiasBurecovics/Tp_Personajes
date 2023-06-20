@@ -97,11 +97,11 @@ export class PersonajeService {
       const valoresOriginales =  await this.getPersonajesById(id)
         const response = await pool.request()
             .input('Id',sql.Int, id)
-            .input('Imagen',sql.NChar, personaje?.imagen ??(valoresOriginales?.Imagen || ''))
-            .input('Nombre',sql.NChar, personaje?.nombre ?? (valoresOriginales?.Nombre || ''))
-            .input('Edad',sql.Int, personaje?.edad ?? (valoresOriginales?.Edad || 0))
-            .input('Peso',sql.Float, personaje?.peso ??(valoresOriginales?.Peso || 0))
-            .input('Historia',sql.NChar, personaje?.historia ??(valoresOriginales?.Historia || ''))
+            .input('Imagen',sql.NChar, personaje.imagen ??(valoresOriginales?.Imagen || ''))
+            .input('Nombre',sql.NChar, personaje.nombre ?? (valoresOriginales?.Nombre || ''))
+            .input('Edad',sql.Int, personaje.edad ?? (valoresOriginales?.Edad || 0))
+            .input('Peso',sql.Float, personaje.peso ??(valoresOriginales?.Peso || 0))
+            .input('Historia',sql.NChar, personaje.historia ??(valoresOriginales?.Historia || ''))
             .query(`UPDATE ${personajeTabla} SET Imagen = @Imagen , Nombre = @Nombre, Edad = @Edad, Peso = @Peso, Historia = @Historia WHERE Id = @Id`);
         console.log(response)
 

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getSignedToken } from '../../index.js';
+import { getSignedToken } from '../index.js';
 
 const router = Router();
 

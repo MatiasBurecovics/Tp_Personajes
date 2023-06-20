@@ -58,10 +58,10 @@ export class PeliculaOSerieService {
         const valoresOriginales =  await this.getpeliculaOSerieById(id)
         const response = await pool.request()
            .input('Id',sql.Int, id)
-           .input('Imagen', sql.NChar, peliculaOSerie?.imagen ?? (valoresOriginales?.Imagen || ''))
-           .input('Titulo', sql.NChar, peliculaOSerie?.titulo ?? (valoresOriginales?.Titulo || ''))
-           .input('Fecha_de_creacion', sql.DateTime, peliculaOSerie?.fecha_de_creacion || (valoresOriginales?.Fecha_de_creacion || new Date()))
-           .input('Calificacion', sql.Float, peliculaOSerie?.calificacion ?? (valoresOriginales?.Calificacion || 0))
+           .input('Imagen', sql.NChar, peliculaOSerie.imagen?? (valoresOriginales?.Imagen || ''))
+           .input('Titulo', sql.NChar, peliculaOSerie.titulo ??(valoresOriginales?.Titulo || ''))
+           .input('Fecha_de_creacion', sql.DateTime, peliculaOSerie.fecha_de_creacion ?? (valoresOriginales?.Fecha_de_creacion || new Date()))
+           .input('Calificacion', sql.Float, peliculaOSerie.calificacion?? (valoresOriginales?.Calificacion || 0))
             .query(`UPDATE ${peliculaTabla} SET Imagen = @Imagen , Titulo = @Titulo, Fecha_de_creacion = @Fecha_de_creacion, Calificacion = @Calificacion WHERE Id = @Id`);
         console.log(response)
 
