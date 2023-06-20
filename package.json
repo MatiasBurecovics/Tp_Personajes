@@ -5,7 +5,7 @@
   "main": "personajeController.js",
   "type": "module",
   "scripts": {
-    "start:disney": "node ./server.js"
+    "start": "node ./server.js"
   },
   "author": "",
   "license": "ISC",
