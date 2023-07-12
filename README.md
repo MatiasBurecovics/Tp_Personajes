@@ -1,4 +1,4 @@
-# Tp-Personajes
+# Tp_Personajes
 Este proyecto es una API para gestionar información sobre películas, series y personajes relacionados con Disney. Proporciona endpoints para obtener, crear, actualizar y eliminar registros de películas, series y personajes.
 
 ## Pelicula y personajes Api
@@ -43,21 +43,29 @@ npm run watch
 
 3. 
 Autenticacion:
-Para probar el endpoint de login, haga una petición GET a '/login' y recibirá un token de autenticación.
+-Para probar el endpoint de login, haga una petición GET a '/login' y recibirá un token de autenticación.
 
 Peliculas:
-Para probar el endpoint de obtener películas, haga una petición GET a '/' y puede agregar los siguientes parámetros de búsqueda opcionales: 'name', 'order'.
-Para probar el endpoint de obtener una película por ID, haga una petición GET a '/:id' y proporcione el ID de la película.
-Para probar el endpoint de agregar una nueva película, haga una petición POST a '/' y proporcione la información de la película.
-Para probar el endpoint de actualizar una película existente, haga una petición PUT a '/:id' y proporcione el ID de la película y la información actualizada.
-Para probar el endpoint de eliminar una película, haga una petición DELETE a '/:id' y proporcione el ID de la película.
+-Para probar el endpoint de obtener películas, haga una petición GET a '/' y puede agregar los siguientes parámetros de búsqueda opcionales: 'name', 'order'.
+
+-Para probar el endpoint de obtener una película por ID, haga una petición GET a '/:id' y proporcione el ID de la película.
+
+-Para probar el endpoint de agregar una nueva película, haga una petición POST a '/' y proporcione la información de la película.
+
+-Para probar el endpoint de actualizar una película existente, haga una petición PUT a '/:id' y proporcione el ID de la película y la información actualizada.
+
+-Para probar el endpoint de eliminar una película, haga una petición DELETE a '/:id' y proporcione el ID de la película.
 
 Personajes:
-Para probar el endpoint de obtener personajes, haga una petición GET a '/' y puede agregar los siguientes parámetros de búsqueda opcionales: 'name', 'age','weight','movies'.
-Para probar el endpoint de obtener un personaje por ID, haga una petición GET a '/:id' y proporcione el ID del personaje.
-Para probar el endpoint de agregar un nuevo personaje, haga una petición POST a '/' y proporcione la información del personaje.
-Para probar el endpoint de actualizar un personaje existente, haga una petición PUT a '/:id' y proporcione el ID del personaje y la información actualizada.
-Para probar el endpoint de eliminar un personaje, haga una petición DELETE a '/:id' y proporcione el ID del personaje.
+-Para probar el endpoint de obtener personajes, haga una petición GET a '/' y puede agregar los siguientes parámetros de búsqueda opcionales: 'name', 'age','weight','movies'.
+
+-Para probar el endpoint de obtener un personaje por ID, haga una petición GET a '/:id' y proporcione el ID del personaje.
+
+-Para probar el endpoint de agregar un nuevo personaje, haga una petición POST a '/' y proporcione la información del personaje.
+
+-Para probar el endpoint de actualizar un personaje existente, haga una petición PUT a '/:id' y proporcione el ID del personaje y la información actualizada.
+
+-Para probar el endpoint de eliminar un personaje, haga una petición DELETE a '/:id' y proporcione el ID del personaje.
 #
 
 
