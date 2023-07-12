@@ -42,10 +42,12 @@ npm run watch
  2. Para usar el proyecto hay 2 opciones: [Swagger](./SwaggerPersonajes.yaml) o [Postman](./TP_PERSONAJES.postman_collection.json)
 
 3. 
-Autenticacion:
+**Autenticacion**:
+
 -Para probar el endpoint de login, haga una petición GET a '/login' y recibirá un token de autenticación.
 
-Peliculas:
+**Peliculas**:
+
 -Para probar el endpoint de obtener películas, haga una petición GET a '/' y puede agregar los siguientes parámetros de búsqueda opcionales: 'name', 'order'.
 
 -Para probar el endpoint de obtener una película por ID, haga una petición GET a '/:id' y proporcione el ID de la película.
@@ -56,7 +58,8 @@ Peliculas:
 
 -Para probar el endpoint de eliminar una película, haga una petición DELETE a '/:id' y proporcione el ID de la película.
 
-Personajes:
+**Personajes**:
+
 -Para probar el endpoint de obtener personajes, haga una petición GET a '/' y puede agregar los siguientes parámetros de búsqueda opcionales: 'name', 'age','weight','movies'.
 
 -Para probar el endpoint de obtener un personaje por ID, haga una petición GET a '/:id' y proporcione el ID del personaje.
