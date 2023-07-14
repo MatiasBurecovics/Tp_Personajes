@@ -39,7 +39,7 @@ npm i
 ```bash
 npm run watch
 ```	
- 2. Para usar el proyecto hay 2 opciones: [Swagger](./SwaggerPersonajes.yaml) o [Postman](./TP_PERSONAJES.postman_collection.json)
+ 2. Para usar el proyecto hay 2 opciones: [Swagger](./swagger.yaml) o [Postman](./TP_PERSONAJES.postman_collection.json)
 
 3. 
 **Autenticacion**:
