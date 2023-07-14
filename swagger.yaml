@@ -1,0 +1,624 @@
+info:
+  _postman_id: 5dbc868d-4d6e-4f43-aa6c-d62924efd53a
+  name: TP_PERSONAJES
+  schema: https://schema.getpostman.com/json/collection/v2.1.0/collection.json
+  _exporter_id: '28053896'
+item:
+  - name: http://localhost:5000/characters/0
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: PUT
+      header: []
+      body:
+        mode: raw
+        raw: "{\r\n        \"imagen\": \"ioefwwefi\",\r\n        \"nombre\": \"grrertgh\"\r\n\r\n    }"
+        options:
+          raw:
+            language: json
+      url:
+        raw: http://localhost:5000/characters/0
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+          - '0'
+    response: []
+  - name: http://localhost:5000/characters/100
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: PUT
+      header: []
+      body:
+        mode: raw
+        raw: "{\r\n        \"imagen\": \"ioefwwefi\",\r\n        \"nombre\": \"grrertgh\"\r\n\r\n    }"
+        options:
+          raw:
+            language: json
+      url:
+        raw: http://localhost:5000/characters/100
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+          - '100'
+    response: []
+  - name: http://localhost:5000/characters/1008
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: PUT
+      header: []
+      body:
+        mode: raw
+        raw: "{\r\n        \"imagen\": \"ioi\",\r\n        \"nombre\": \"ala\"\r\n\r\n    }"
+        options:
+          raw:
+            language: json
+      url:
+        raw: http://localhost:5000/characters/1008
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+          - '1008'
+    response: []
+  - name: http://localhost:5000/characters/7
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/characters/7
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+          - '7'
+    response: []
+  - name: http://localhost:5000/characters
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/characters
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+    response: []
+  - name: http://localhost:5000/characters/0
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/characters/0
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+          - '0'
+    response: []
+  - name: http://localhost:5000/characters/9
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/characters/9
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+          - '9'
+    response: []
+  - name: http://localhost:5000/movies/0
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: DELETE
+      header: []
+      url:
+        raw: http://localhost:5000/movies/0
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - movies
+          - '0'
+    response: []
+  - name: http://localhost:5000/movies/1
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: DELETE
+      header: []
+      url:
+        raw: http://localhost:5000/movies/1
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - movies
+          - '1'
+    response: []
+  - name: http://localhost:5000/auth/login
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiI4NmNoNkVZTXozTDJTU3pzZ0dAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcwOTg0ODMsImV4cCI6MTY4NzEzMzA0MywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6Ijg2Y2g2RVlNejNMMlNTenNnRyJ9.R8jvia24kurxpdYQOq21sDEX3JwevTsuJDfTwo7C5oM
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/auth/login
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - auth
+          - login
+    response: []
+  - name: http://localhost:5000/movies
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/movies
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - movies
+    response: []
+  - name: http://localhost:5000/movies/8
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/movies/8
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - movies
+          - '8'
+    response: []
+  - name: http://localhost:5000/movies/0
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/movies/0
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - movies
+          - '0'
+    response: []
+  - name: http://localhost:5000/movies/320
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/movies/320
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - movies
+          - '320'
+    response: []
+  - name: http://localhost:5000/characters/6
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: DELETE
+      header: []
+      url:
+        raw: http://localhost:5000/characters/6
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+          - '6'
+    response: []
+  - name: http://localhost:5000/characters/0
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: DELETE
+      header: []
+      url:
+        raw: http://localhost:5000/characters/0
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+          - '0'
+    response: []
+  - name: http://localhost:5000/characters
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: POST
+      header: []
+      body:
+        mode: raw
+        raw: "{\r\n  \"imagen\":\"hdfhfdhfghf\",\r\n  \"nombre\":\"dghhdhd\",\r\n  \"edad\":23,\r\n  \"peso\":44,\r\n  \"historia\":\"heuiodferuiohduiohjv\"  \r\n}"
+        options:
+          raw:
+            language: json
+      url:
+        raw: http://localhost:5000/characters
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+    response: []
+  - name: http://localhost:5000/characters?name=Loki
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/characters?name=Loki
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+        query:
+          - key: name
+            value: Loki
+    response: []
+  - name: http://localhost:5000/characters?weight=35.3
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/characters?weight=35.3
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+        query:
+          - key: weight
+            value: '35.3'
+    response: []
+  - name: http://localhost:5000/characters?age=60
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/characters?age=60
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+        query:
+          - key: age
+            value: '60'
+    response: []
+  - name: http://localhost:5000/characters?movies=8
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/characters?movies=8
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - characters
+        query:
+          - key: movies
+            value: '8'
+    response: []
+  - name: http://localhost:5000/movies/24
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: PUT
+      header: []
+      body:
+        mode: raw
+        raw: "{\r\n    \"calificacion\":3\r\n}"
+        options:
+          raw:
+            language: json
+      url:
+        raw: http://localhost:5000/movies/24
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - movies
+          - '24'
+    response: []
+  - name: http://localhost:5000/movies/0
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: PUT
+      header: []
+      body:
+        mode: raw
+        raw: "{\r\n    \"calificacion\":3\r\n}"
+        options:
+          raw:
+            language: json
+      url:
+        raw: http://localhost:5000/movies/0
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - movies
+          - '0'
+    response: []
+  - name: http://localhost:5000/movies/50
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: PUT
+      header: []
+      body:
+        mode: raw
+        raw: "{\r\n    \"calificacion\":3\r\n}"
+        options:
+          raw:
+            language: json
+      url:
+        raw: http://localhost:5000/movies/50
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - movies
+          - '50'
+    response: []
+  - name: http://localhost:5000/movies
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: POST
+      header: []
+      body:
+        mode: raw
+        raw: "  {\r\n        \"imagen\": \"prueba\",\r\n        \"titulo\": \"crack\",\r\n        \"fecha_de_creacion\": \"2022-03-30T00:00:00.000Z\",\r\n        \"calificacion\":2\r\n    }"
+        options:
+          raw:
+            language: json
+      url:
+        raw: http://localhost:5000/movies
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - movies
+    response: []
+  - name: http://localhost:5000/movies?name=Blancanieves y los siete enanos
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/movies?name=Blancanieves y los siete enanos
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - movies
+        query:
+          - key: name
+            value: Blancanieves y los siete enanos
+    response: []
+  - name: http://localhost:5000/movies?order=ASC
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/movies?order=ASC
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - movies
+        query:
+          - key: order
+            value: ASC
+    response: []
+  - name: http://localhost:5000/movies?order=DESC
+    request:
+      auth:
+        type: bearer
+        bearer:
+          - key: token
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiY3VzdG9tIHBheWxvYWQiLCJ1c2VyRW1haWwiOiJDYmRNaHZ1bXZTQnJvVUF1Z1ZAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODcxMzM2NTMsImV4cCI6MTY4NzE2ODIxMywiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3QvIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsInN1YiI6IkNiZE1odnVtdlNCcm9VQXVnViJ9.m7Dro1RRTGgnK6BkZpb-HYmo_AS7riyKQ4B_ZTg3nRc
+            type: string
+      method: GET
+      header: []
+      url:
+        raw: http://localhost:5000/movies?order=DESC
+        protocol: http
+        host:
+          - localhost
+        port: '5000'
+        path:
+          - movies
+        query:
+          - key: order
+            value: DESC
+    response: []
